@@ -94,7 +94,7 @@ func getCharDevice(rdmaDeviceName string, classDir string,
 		if isDirForRdmaDevice(rdmaDeviceName, dirName) == false {
 			continue
 		}
-		deviceFile := filepath.Join("/dev/infiniband", fileInfos[i].Name())
+		deviceFile := filepath.Join(RdmaDeviceDir, fileInfos[i].Name())
 		return deviceFile, nil
 	}
 	return "", fmt.Errorf("No ucm device found")
